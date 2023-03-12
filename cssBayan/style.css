@@ -1,0 +1,136 @@
+html {
+    font-size: 65%;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5rem;
+    background-color: antiquewhite;
+    font-size: 1.2rem;
+}
+.container {
+    margin: 0 auto;
+    max-width: 26rem;
+}
+p {
+    margin: 0 auto;
+    width: 10rem;
+    font-size: 1.6rem;
+}
+.item {
+    border-bottom: 0.1rem solid black;
+}
+.item-title {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    font-weight: bold;
+    color: blue;
+}
+.item-title:active {
+    color: purple;
+}
+.item-input {
+    appearance: none;
+    margin: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+.title {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+}
+.img {
+    width: 0rem;
+    height: 0rem;
+    display: block;
+    transition: 0.5s all;
+    margin: 0 auto;
+}
+.item-input:checked ~ .img{
+    width: 15rem;
+    height: 15rem;
+}
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(assets/plus-line-icon.svg);
+    transition: 0.4s all ease-in-out;
+}
+.item-input:checked ~ .title>.icon{
+    background-image: url(assets/crossforlinks.svg);
+}
+.item-input:checked ~ .title{
+    color: black;
+}
+
+@media (hover: hover) {
+    .icon {
+        opacity: 0;
+        visibility: 0;
+    }
+    .item:hover {
+      cursor: pointer;
+    }
+    .item:hover .icon{
+        background-image: url(assets/crossforlinks.svg);
+    }
+    @media (min-width: 820px){
+        .item:hover .img{
+            width: 25rem;
+            height: 25rem;
+        }
+    }
+    @media (min-width: 1200px){
+        .item:hover .img{
+            width: 30rem;
+            height: 30rem;
+        }
+    }
+    .item:hover .item-title{
+        color: purple;
+    }
+    .container:hover .icon{
+        opacity: 1;
+        visibility: 1;
+    }
+  }
+  @media (min-width: 820px){
+    body {
+        font-size: 1.4rem;
+    }
+    .container {
+        max-width: 35rem;
+        padding: 1.5rem;
+    }
+    .item-input:checked ~ .img{
+        width: 25rem;
+        height: 25rem;
+    }
+    p {
+        font-size: 2rem;
+        width: 15rem;
+    }
+  }
+  @media (min-width: 1200px){
+    body {
+        font-size: 1.6rem;
+    }
+    .container {
+        max-width: 45rem;
+        padding: 3rem;
+    }
+    .item-input:checked ~ .img{
+        width: 30rem;
+        height: 30rem;
+    }
+    p {
+        font-size: 2.5rem;
+        width: 20rem;
+    }
+  }
